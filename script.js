@@ -558,6 +558,146 @@ function initPledgeButton() {
   }
 }
 
+// Chatbot functionality
+function initChatbot() {
+  // Create chatbot elements
+  const chatbotButton = document.createElement('div');
+  chatbotButton.className = 'chatbot-button';
+  chatbotButton.innerHTML = '<i class="fas fa-comment-dots"></i>';
+  
+  const chatbotContainer = document.createElement('div');
+  chatbotContainer.className = 'chatbot-container hidden';
+  
+  chatbotContainer.innerHTML = `
+    <div class="chatbot-header">
+      <div class="flex items-center">
+        <i class="fas fa-robot mr-2 text-blue-300"></i>
+        <h3>AI Assistant</h3>
+      </div>
+      <button class="chatbot-close"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="chatbot-messages"></div>
+    <div class="chatbot-input">
+      <input type="text" placeholder="Ask something about AI...">
+      <button><i class="fas fa-paper-plane"></i></button>
+    </div>
+  `;
+  
+  document.body.appendChild(chatbotButton);
+  document.body.appendChild(chatbotContainer);
+  
+  // Get elements
+  const chatbotClose = chatbotContainer.querySelector('.chatbot-close');
+  const chatbotMessages = chatbotContainer.querySelector('.chatbot-messages');
+  const chatbotInput = chatbotContainer.querySelector('input');
+  const chatbotSend = chatbotContainer.querySelector('.chatbot-input button');
+  
+  // Toggle chatbot
+  chatbotButton.addEventListener('click', () => {
+    chatbotContainer.classList.toggle('hidden');
+    chatbotButton.classList.toggle('active');
+    if (!chatbotContainer.classList.contains('hidden')) {
+      // Add welcome message if first time
+      if (chatbotMessages.children.length === 0) {
+        addBotMessage("Hello! I'm your AI assistant. How can I help you with your AI questions today?");
+      }
+      chatbotInput.focus();
+    }
+  });
+  
+  // Close chatbot
+  chatbotClose.addEventListener('click', () => {
+    chatbotContainer.classList.add('hidden');
+    chatbotButton.classList.remove('active');
+  });
+  
+  // Send message
+  const sendMessage = () => {
+    const message = chatbotInput.value.trim();
+    if (message) {
+      addUserMessage(message);
+      chatbotInput.value = '';
+      
+      // Process after a short delay to simulate thinking
+      setTimeout(() => {
+        const response = generateResponse(message);
+        addBotMessage(response);
+      }, 600);
+    }
+  };
+  
+  // Send on button click
+  chatbotSend.addEventListener('click', sendMessage);
+  
+  // Send on enter key
+  chatbotInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      sendMessage();
+    }
+  });
+  
+  // Add user message to chat
+  function addUserMessage(message) {
+    const messageElement = document.createElement('div');
+    messageElement.className = 'message user-message';
+    messageElement.textContent = message;
+    chatbotMessages.appendChild(messageElement);
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+  }
+  
+  // Add bot message to chat
+  function addBotMessage(message) {
+    const messageElement = document.createElement('div');
+    messageElement.className = 'message bot-message';
+    messageElement.innerHTML = message;
+    chatbotMessages.appendChild(messageElement);
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+  }
+  
+  // Simple response generation based on keywords
+  function generateResponse(message) {
+    const messageLower = message.toLowerCase();
+    
+    // Common AI questions and responses
+    if (messageLower.includes('what is ai') || messageLower.includes('define ai')) {
+      return "Artificial Intelligence (AI) refers to systems or machines that mimic human intelligence to perform tasks and can iteratively improve themselves based on the information they collect.";
+    }
+    else if (messageLower.includes('machine learning') || messageLower.includes('ml')) {
+      return "Machine Learning is a subset of AI that enables a system to learn from data rather than through explicit programming. It uses algorithms to identify patterns in data and make decisions with minimal human intervention.";
+    }
+    else if (messageLower.includes('deep learning')) {
+      return "Deep Learning is a subset of machine learning that uses neural networks with several layers (hence 'deep'). It's particularly good at recognizing patterns and is used for image and speech recognition, among many other applications.";
+    }
+    else if (messageLower.includes('neural network')) {
+      return "Neural networks are computing systems inspired by the biological neural networks in human brains. They consist of layers of interconnected nodes or 'neurons' that process data and learn to recognize patterns.";
+    }
+    else if (messageLower.includes('history of ai') || messageLower.includes('ai history')) {
+      return "AI research began in the 1950s, with the term coined at the Dartmouth Conference in 1956. It has gone through cycles of optimism and 'AI winters'. Major breakthroughs came in the 2010s with deep learning, and in the 2020s with large language models like GPT.";
+    }
+    else if (messageLower.includes('chatgpt') || messageLower.includes('gpt')) {
+      return "ChatGPT is a large language model developed by OpenAI. It's trained on vast amounts of text data to generate human-like responses and can handle a wide range of topics and tasks.";
+    }
+    else if (messageLower.includes('ai ethics') || messageLower.includes('ethical ai')) {
+      return "AI ethics involves ensuring AI systems are designed and used responsibly, addressing issues like bias, privacy, accountability, and transparency. As AI becomes more powerful, ethical considerations become increasingly important.";
+    }
+    else if (messageLower.includes('ai jobs') || messageLower.includes('career in ai')) {
+      return "Careers in AI include data scientist, machine learning engineer, AI researcher, robotics engineer, and AI ethicist. These roles typically require knowledge of programming, statistics, and domain expertise.";
+    }
+    else if (messageLower.includes('future of ai')) {
+      return "The future of AI may include more advanced general AI, better integration into everyday life, improved healthcare diagnostics, autonomous systems, and addressing significant societal challenges. However, it also raises important ethical and regulatory questions.";
+    }
+    else if (messageLower.includes('hello') || messageLower.includes('hi') || messageLower.includes('hey')) {
+      return "Hello! How can I help you with AI topics today?";
+    }
+    else if (messageLower.includes('thank')) {
+      return "You're welcome! Is there anything else you'd like to know about AI?";
+    }
+    else {
+      return "That's an interesting question about AI. While I'm a simple demonstration chatbot, I'd encourage you to explore the various sections of this website to learn more about AI concepts, applications, and impacts.";
+    }
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize all features
   initMobileMenu();
@@ -594,6 +734,9 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Initialize pledge button
   initPledgeButton();
+  
+  // Initialize chatbot
+  initChatbot();
   
   // Resize handler for neural connections
   window.addEventListener('resize', () => {
