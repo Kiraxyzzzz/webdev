@@ -21,6 +21,10 @@ body.dark {
   color: #f3f4f6 !important;
 }
 
+.dark .text-gray-700 {
+  color: #e2e8f0 !important;
+}
+
 .dark .bg-gray-100 {
   background: #1a2234 !important;
 }
@@ -31,6 +35,15 @@ body.dark {
 
 .dark .text-gray-600 {
   color: #cbd5e1 !important;
+}
+
+/* Ensure color consistency in dark mode */
+.dark p, .dark li {
+  color: #e2e8f0;
+}
+
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+  color: #f3f4f6;
 }
 
 /* Quiz dark mode specific styles */
