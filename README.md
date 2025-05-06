@@ -1,6 +1,7 @@
 # AI: Shaping Our Future
 
-A modern, responsive, and interactive website about Artificial Intelligence, built for the PSU Web Development Contest.
+A modern, responsive, and interactive website about Artificial Intelligence. 
+Instagram: @rayuxyz
 
 ## Features
 - Multi-page design with dedicated sections:
