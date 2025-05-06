@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI: Shaping Our Future</title>
+  <meta name="description" content="Explore the world of Artificial Intelligence - its history, applications, benefits, challenges, and how you can participate responsibly in the AI revolution.">
+  <meta name="keywords" content="artificial intelligence, AI, machine learning, technology, ethics, future technology, AI quiz, responsible AI">
+  <meta name="author" content="PSU WebDev Contest">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ai-future.example.com/">
+  <meta property="og:title" content="AI: Shaping Our Future">
+  <meta property="og:description" content="Learn about AI technology, take an interactive quiz, and discover how to use AI responsibly.">
+  <meta property="og:image" content="https://img.freepik.com/free-vector/brain-with-digital-circuit-banner-artificial-intelligence-technology-background_8169-175.jpg">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://ai-future.example.com/">
+  <meta property="twitter:title" content="AI: Shaping Our Future">
+  <meta property="twitter:description" content="Learn about AI technology, take an interactive quiz, and discover how to use AI responsibly.">
+  <meta property="twitter:image" content="https://img.freepik.com/free-vector/brain-with-digital-circuit-banner-artificial-intelligence-technology-background_8169-175.jpg">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://img.icons8.com/fluent/48/000000/artificial-intelligence.png">
+  
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <!-- Fixed navigation -->
+  <header class="bg-blue-900 text-white p-4 shadow fixed w-full z-50">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-3xl font-bold flex items-center"><i class="fas fa-robot mr-2"></i>AI: Shaping Our Future</h1>
+      <nav class="hidden md:flex items-center">
+        <a href="index.html" class="mx-3 hover:text-blue-200 transition text-blue-300"><i class="fas fa-home mr-1"></i> Home</a>
+        <a href="info.html" class="mx-3 hover:text-blue-200 transition"><i class="fas fa-info-circle mr-1"></i> Info</a>
+        <a href="action.html" class="mx-3 hover:text-blue-200 transition"><i class="fas fa-hands-helping mr-1"></i> Action</a>
+        <a href="quiz.html" class="mx-3 hover:text-blue-200 transition"><i class="fas fa-question-circle mr-1"></i> Quiz</a>
+      </nav>
+      <button id="mobileMenuBtn" class="md:hidden text-xl p-2 focus:outline-none">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+  
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="bg-blue-800 text-white fixed w-full z-40 hidden shadow-lg">
+    <div class="container mx-auto py-2">
+      <a href="index.html" class="block py-3 px-4 bg-blue-700 border-b border-blue-600"><i class="fas fa-home mr-2"></i> Home</a>
+      <a href="info.html" class="block py-3 px-4 hover:bg-blue-700 border-b border-blue-600"><i class="fas fa-info-circle mr-2"></i> Info</a>
+      <a href="action.html" class="block py-3 px-4 hover:bg-blue-700 border-b border-blue-600"><i class="fas fa-hands-helping mr-2"></i> Action</a>
+      <a href="quiz.html" class="block py-3 px-4 hover:bg-blue-700"><i class="fas fa-question-circle mr-2"></i> Quiz</a>
+    </div>
+  </div>
+
+  <!-- Hero section with animation - make it full screen height -->
+  <section id="home" class="min-h-screen flex items-center pt-16 pb-16 bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700 text-white relative overflow-hidden">
+    <!-- Animated background particles -->
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="particles-container"></div>
+    </div>
+    
+    <!-- Floating tech icons -->
+    <div class="tech-icons-container absolute inset-0 overflow-hidden pointer-events-none">
+      <i class="floating-icon fas fa-microchip" style="--delay: 0s; --x: 15%; --y: 20%"></i>
+      <i class="floating-icon fas fa-brain" style="--delay: 2s; --x: 75%; --y: 50%"></i>
+      <i class="floating-icon fas fa-robot" style="--delay: 4s; --x: 25%; --y: 80%"></i>
+      <i class="floating-icon fas fa-code" style="--delay: 6s; --x: 85%; --y: 15%"></i>
+      <i class="floating-icon fas fa-chart-network" style="--delay: 8s; --x: 10%; --y: 60%"></i>
+      <i class="floating-icon fas fa-cog" style="--delay: 10s; --x: 60%; --y: 85%"></i>
+    </div>
+
+    <div class="container mx-auto px-4 md:px-8 relative z-10">
+      <div class="lg:flex items-center">
+        <div class="lg:w-1/2 mb-12 lg:mb-0">
+          <h2 class="text-4xl md:text-6xl font-bold mb-6 animate-fadeIn">Welcome to the <span class="text-blue-300">AI Revolution</span></h2>
+          <p class="text-xl md:text-2xl mb-8 animate-fadeIn opacity-90 leading-relaxed">Artificial Intelligence is transforming industries, societies, and our daily lives. While it brings innovation and efficiency, it also raises ethical, social, and economic questions.</p>
+          <div class="flex flex-wrap">
+            <a href="quiz.html" class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-500 transition shadow-lg mr-4 mb-4 flex items-center">
+              <i class="fas fa-play-circle mr-2"></i> Take the Quiz
+            </a>
+            <a href="info.html" class="bg-transparent border-2 border-white text-white px-6 py-3 rounded-full hover:bg-white hover:text-blue-800 transition mb-4 flex items-center">
+              <i class="fas fa-book mr-2"></i> Learn More
+            </a>
+          </div>
+        </div>
+        <div class="lg:w-1/2 flex justify-center">
+          <div class="ai-brain-container relative">
+            <div class="ai-brain-glow absolute w-full h-full rounded-full"></div>
+            <img src="https://www.transparentpng.com/thumb/brain/brain-png-icon-5.png" alt="AI Brain" class="ai-brain-image relative z-10 w-64 md:w-96">
+            <div class="neural-connections"></div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
+        <span class="text-white text-sm mb-2">Scroll to explore</span>
+        <i class="fas fa-chevron-down text-white"></i>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- Info cards section - with reveal animations -->
+    <section id="info" class="py-24 bg-gray-100 dark:bg-gray-900 section-reveal">
+      <div class="container mx-auto px-4 md:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-2 relative inline-block">
+            <i class="fas fa-lightbulb text-yellow-500 mr-2"></i>
+            About AI
+            <div class="h-1 w-24 bg-blue-600 absolute bottom-0 left-1/2 transform -translate-x-1/2 mt-2"></div>
+          </h2>
+          <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mt-4">Understanding artificial intelligence is the first step to responsible use. Here's what you need to know.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 card-reveal">
+            <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded-full w-16 h-16 flex items-center justify-center mb-4">
+              <i class="fas fa-microchip text-blue-600 dark:text-blue-300 text-2xl"></i>
+            </div>
+            <h3 class="font-bold text-xl mb-2 dark:text-white">What is AI?</h3>
+            <p class="text-gray-600 dark:text-gray-300">AI is the simulation of human intelligence in machines that are programmed to think and learn like humans. It encompasses machine learning, neural networks, and other technologies that enable computers to perform tasks typically requiring human intelligence.</p>
+          </div>
+          
+          <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 card-reveal">
+            <div class="bg-green-100 dark:bg-green-900 p-3 rounded-full w-16 h-16 flex items-center justify-center mb-4">
+              <i class="fas fa-mobile-alt text-green-600 dark:text-green-300 text-2xl"></i>
+            </div>
+            <h3 class="font-bold text-xl mb-2 dark:text-white">AI in Everyday Life</h3>
+            <p class="text-gray-600 dark:text-gray-300">From voice assistants to recommendation systems, AI is everywhere. It powers search engines, fraud detection, smart home devices, personalized media, and even medical diagnosis tools. The average person interacts with AI dozens of times daily.</p>
+          </div>
+          
+          <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 card-reveal">
+            <div class="bg-purple-100 dark:bg-purple-900 p-3 rounded-full w-16 h-16 flex items-center justify-center mb-4">
+              <i class="fas fa-chart-line text-purple-600 dark:text-purple-300 text-2xl"></i>
+            </div>
+            <h3 class="font-bold text-xl mb-2 dark:text-white">Opportunities</h3>
+            <p class="text-gray-600 dark:text-gray-300">AI can solve complex problems, create new jobs, and improve efficiency across industries. It has the potential to solve previously impossible challenges in healthcare, climate science, and education while creating an estimated 97 million new jobs by 2025.</p>
+          </div>
+          
+          <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 card-reveal">
+            <div class="bg-red-100 dark:bg-red-900 p-3 rounded-full w-16 h-16 flex items-center justify-center mb-4">
+              <i class="fas fa-exclamation-triangle text-red-600 dark:text-red-300 text-2xl"></i>
+            </div>
+            <h3 class="font-bold text-xl mb-2 dark:text-white">Challenges</h3>
+            <p class="text-gray-600 dark:text-gray-300">AI raises concerns about bias, job displacement, privacy, and ethics. Algorithms can perpetuate existing prejudices, and 85 million jobs may be displaced by 2025. Addressing these challenges requires thoughtful regulation and ethical frameworks.</p>
+          </div>
+        </div>
+        
+        <!-- AI Timeline -->
+        <div class="mt-16 relative">
+          <h3 class="text-2xl font-bold mb-10 text-center dark:text-white">The Evolution of AI</h3>
+          
+          <!-- Decorative background elements -->
+          <div class="absolute top-0 right-0 w-32 h-32 bg-blue-100 dark:bg-blue-900 rounded-full opacity-20 transform translate-x-1/2 -translate-y-1/2 filter blur-xl"></div>
+          <div class="absolute bottom-0 left-0 w-32 h-32 bg-purple-100 dark:bg-purple-900 rounded-full opacity-20 transform -translate-x-1/2 translate-y-1/2 filter blur-xl"></div>
+          
+          <div class="relative">
+            <!-- Animated timeline line with glowing effect -->
+            <div class="absolute h-full w-1 bg-gradient-to-b from-blue-300 via-blue-500 to-blue-700 dark:from-blue-700 dark:via-blue-600 dark:to-blue-400 left-1/2 transform -translate-x-1/2 timeline-glow"></div>
+            
+            <!-- Timeline items -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
+              <!-- 1950s -->
+              <div class="md:text-right md:pr-8 card-reveal">
+                <div class="timeline-dot" style="top: 2rem;"></div>
+                <div class="inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm font-semibold mb-2">1950s</div>
+                <h4 class="text-xl font-bold mb-2 dark:text-white">The Birth of AI</h4>
+                <p class="text-gray-600 dark:text-gray-300">The term "Artificial Intelligence" was coined in 1956 at the Dartmouth Conference. Early AI pioneers like Alan Turing developed the concept of the Turing Test to measure a machine's ability to exhibit intelligent behavior.</p>
+                <div class="timeline-image mt-4 md:mt-0">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Alan_Turing_Aged_16.jpg" alt="Alan Turing" class="w-20 h-20 md:hidden object-cover rounded-full shadow-md border-2 border-blue-300">
+                </div>
+              </div>
+              <div class="hidden md:block relative">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Alan_Turing_Aged_16.jpg" alt="Alan Turing" class="w-24 h-24 object-cover rounded-full shadow-lg border-2 border-blue-300 absolute top-0 left-8 timeline-image">
+              </div>
+              
+              <!-- 1960s -->
+              <div class="hidden md:block relative">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/IBM_Electronic_Data_Processing_Machine_-_GPN-2000-001881.jpg" alt="Early AI Computer" class="w-24 h-24 object-cover rounded-full shadow-lg border-2 border-yellow-300 absolute top-0 right-8 timeline-image">
+              </div>
+              <div class="md:pl-8 card-reveal">
+                <div class="timeline-dot" style="top: 2rem;"></div>
+                <div class="inline-block bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 px-3 py-1 rounded-full text-sm font-semibold mb-2">1960s</div>
+                <h4 class="text-xl font-bold mb-2 dark:text-white">First AI Programs</h4>
+                <p class="text-gray-600 dark:text-gray-300">The 1960s saw the development of early AI programs like ELIZA, which simulated conversation, and the first machine learning program that could play checkers. These programs demonstrated the potential of AI for solving specific problems.</p>
+                <div class="timeline-image mt-4 md:mt-0">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/IBM_Electronic_Data_Processing_Machine_-_GPN-2000-001881.jpg" alt="Early AI Computer" class="w-20 h-20 md:hidden object-cover rounded-full shadow-md border-2 border-yellow-300">
+                </div>
+              </div>
+              
+              <!-- 1970s -->
+              <div class="md:text-right md:pr-8 card-reveal">
+                <div class="timeline-dot" style="top: 2rem;"></div>
+                <div class="inline-block bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-3 py-1 rounded-full text-sm font-semibold mb-2">1970s</div>
+                <h4 class="text-xl font-bold mb-2 dark:text-white">The First AI Winter</h4>
+                <p class="text-gray-600 dark:text-gray-300">After initial excitement, AI research faced setbacks and funding cuts in the 1970s as early promises weren't met. The field shifted toward more specialized applications and knowledge-based systems to overcome limitations in computing power.</p>
+                <div class="timeline-image mt-4 md:mt-0">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Hanscom_AFB_-_Computer_-_1973.jpg" alt="1970s Computer" class="w-20 h-20 md:hidden object-cover rounded-full shadow-md border-2 border-orange-300">
+                </div>
+              </div>
+              <div class="hidden md:block relative">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Hanscom_AFB_-_Computer_-_1973.jpg" alt="1970s Computer" class="w-24 h-24 object-cover rounded-full shadow-lg border-2 border-orange-300 absolute top-0 left-8 timeline-image">
+              </div>
+              
+              <!-- 1980s -->
+              <div class="hidden md:block relative">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/LISP_Machine.jpg/1200px-LISP_Machine.jpg" alt="LISP Machine" class="w-24 h-24 object-cover rounded-full shadow-lg border-2 border-green-300 absolute top-0 right-8 timeline-image">
+              </div>
+              <div class="md:pl-8 card-reveal">
+                <div class="timeline-dot" style="top: 2rem;"></div>
+                <div class="inline-block bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm font-semibold mb-2">1980s</div>
+                <h4 class="text-xl font-bold mb-2 dark:text-white">Expert Systems</h4>
+                <p class="text-gray-600 dark:text-gray-300">Expert systems became commercially successful, solving specialized problems by mimicking human expertise. Meanwhile, neural networks regained interest after the development of backpropagation.</p>
+                <div class="timeline-image mt-4 md:mt-0">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/LISP_Machine.jpg/1200px-LISP_Machine.jpg" alt="LISP Machine" class="w-20 h-20 md:hidden object-cover rounded-full shadow-md border-2 border-green-300">
+                </div>
+              </div>
+              
+              <!-- 1990s -->
+              <div class="md:text-left md:pl-8 card-reveal">
+                <div class="timeline-dot" style="top: 2rem;"></div>
+                <div class="inline-block bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm font-semibold mb-2">1990s</div>
+                <h4 class="text-xl font-bold mb-2 dark:text-white">Neural Networks Renaissance</h4>
+                <p class="text-gray-600 dark:text-gray-300">Neural networks made a comeback with advancements in computing power. New algorithms like backpropagation allowed for more effective training of multi-layer networks.</p>
+                <div class="timeline-image mt-4 md:mt-0">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Artificial_neural_network.svg" alt="Neural Network" class="w-full h-32 md:h-40 object-cover rounded-lg shadow-md">
+                </div>
+              </div>
+              
+              <!-- 2000s -->
+              <div class="md:text-right md:pr-8 card-reveal">
+                <div class="timeline-dot" style="top: 2rem;"></div>
+                <div class="inline-block bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-3 py-1 rounded-full text-sm font-semibold mb-2">2000s</div>
+                <h4 class="text-xl font-bold mb-2 dark:text-white">Practical Applications</h4>
+                <p class="text-gray-600 dark:text-gray-300">AI began finding practical applications in everyday technology. Machine learning became more accessible with open-source tools and frameworks.</p>
+                <div class="timeline-image mt-4 md:mt-0">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/ASIMO_4.28.11.jpg" alt="ASIMO Robot" class="w-full h-32 md:h-40 object-cover rounded-lg shadow-md">
+                </div>
+              </div>
+              
+              <!-- 2010s -->
+              <div class="md:text-right md:pr-8 card-reveal">
+                <div class="timeline-dot" style="top: 2rem;"></div>
+                <div class="inline-block bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm font-semibold mb-2">2010s</div>
+                <h4 class="text-xl font-bold mb-2 dark:text-white">Deep Learning Revolution</h4>
+                <p class="text-gray-600 dark:text-gray-300">Deep learning models achieved breakthrough performances in image recognition, natural language processing, and game playing. IBM's Watson won Jeopardy!, and DeepMind's AlphaGo defeated the world champion in Go.</p>
+                <div class="timeline-image mt-4 md:mt-0">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Alphago_logo.jpg/800px-Alphago_logo.jpg" alt="AlphaGo" class="w-20 h-20 md:hidden object-cover rounded-full shadow-md border-2 border-purple-300">
+                </div>
+              </div>
+              <div class="hidden md:block relative">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Alphago_logo.jpg/800px-Alphago_logo.jpg" alt="AlphaGo" class="w-24 h-24 object-cover rounded-full shadow-lg border-2 border-purple-300 absolute top-0 left-8 timeline-image">
+              </div>
+              
+              <!-- 2020s -->
+              <div class="hidden md:block relative">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1200px-ChatGPT_logo.svg.png" alt="ChatGPT" class="w-24 h-24 object-cover rounded-full shadow-lg border-2 border-red-300 absolute top-0 right-8 timeline-image">
+              </div>
+              <div class="md:pl-8 card-reveal">
+                <div class="timeline-dot" style="top: 2rem;"></div>
+                <div class="inline-block bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-3 py-1 rounded-full text-sm font-semibold mb-2">2020s</div>
+                <h4 class="text-xl font-bold mb-2 dark:text-white">Generative AI Era</h4>
+                <p class="text-gray-600 dark:text-gray-300">Large language models like GPT and image generators like DALL-E have revolutionized content creation. ChatGPT reached 100 million users within 2 months of launch, becoming the fastest-growing consumer application in history.</p>
+                <div class="timeline-image mt-4 md:mt-0">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1200px-ChatGPT_logo.svg.png" alt="ChatGPT" class="w-20 h-20 md:hidden object-cover rounded-full shadow-md border-2 border-red-300">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats section with animated counters and improved visuals -->
+    <section class="py-16 bg-blue-800 text-white section-reveal relative overflow-hidden">
+      <!-- Background glow effect -->
+      <div class="absolute w-64 h-64 rounded-full bg-blue-400 filter blur-3xl opacity-20 top-0 right-0 transform translate-x-1/4 -translate-y-1/4"></div>
+      <div class="absolute w-64 h-64 rounded-full bg-indigo-400 filter blur-3xl opacity-20 bottom-0 left-0 transform -translate-x-1/4 translate-y-1/4"></div>
+      
+      <div class="container mx-auto px-4 md:px-8 relative z-10">
+        <h3 class="text-2xl font-bold mb-10 text-center">AI By The Numbers</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div class="counter-item p-6 bg-blue-900 bg-opacity-50 rounded-lg transform transition hover:scale-105">
+            <i class="fas fa-building mb-4 text-3xl text-blue-300"></i>
+            <div class="text-4xl font-bold mb-2" data-count="85">0</div>
+            <div class="text-blue-200">% of businesses using AI</div>
+          </div>
+          <div class="counter-item p-6 bg-blue-900 bg-opacity-50 rounded-lg transform transition hover:scale-105">
+            <i class="fas fa-mobile-alt mb-4 text-3xl text-blue-300"></i>
+            <div class="text-4xl font-bold mb-2" data-count="67">0</div>
+            <div class="text-blue-200">million AI voice assistants</div>
+          </div>
+          <div class="counter-item p-6 bg-blue-900 bg-opacity-50 rounded-lg transform transition hover:scale-105">
+            <i class="fas fa-chart-line mb-4 text-3xl text-blue-300"></i>
+            <div class="text-4xl font-bold mb-2" data-count="40">0</div>
+            <div class="text-blue-200">% productivity increase</div>
+          </div>
+          <div class="counter-item p-6 bg-blue-900 bg-opacity-50 rounded-lg transform transition hover:scale-105">
+            <i class="fas fa-dollar-sign mb-4 text-3xl text-blue-300"></i>
+            <div class="text-4xl font-bold mb-2" data-count="133">0</div>
+            <div class="text-blue-200">billion market size by 2030</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive AI Applications Showcase -->
+    <div class="mt-20 mb-16">
+      <h3 class="text-2xl font-bold mb-8 text-center dark:text-white">AI Applications Showcase</h3>
+      
+      <div class="app-showcase">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto px-4">
+          <!-- App Card 1 -->
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition hover:-translate-y-2 hover:shadow-xl">
+            <div class="h-40 bg-gradient-to-r from-blue-500 to-indigo-600 relative flex items-center justify-center">
+              <i class="fas fa-robot text-white text-6xl"></i>
+            </div>
+            <div class="p-5">
+              <h4 class="font-bold text-xl mb-2 dark:text-white">Natural Language Processing</h4>
+              <p class="text-gray-600 dark:text-gray-300 text-sm">AI systems that understand, interpret, and generate human language, powering chatbots, translation services, and content creation.</p>
+              <a href="info.html" class="mt-4 inline-block text-blue-600 dark:text-blue-400 hover:underline">Learn more <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+          </div>
+          
+          <!-- App Card 2 -->
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition hover:-translate-y-2 hover:shadow-xl">
+            <div class="h-40 bg-gradient-to-r from-green-500 to-teal-600 relative flex items-center justify-center">
+              <i class="fas fa-heartbeat text-white text-6xl"></i>
+            </div>
+            <div class="p-5">
+              <h4 class="font-bold text-xl mb-2 dark:text-white">Healthcare AI</h4>
+              <p class="text-gray-600 dark:text-gray-300 text-sm">AI-assisted diagnosis, drug discovery, personalized medicine, and analysis of medical imaging to detect diseases earlier and more accurately.</p>
+              <a href="info.html" class="mt-4 inline-block text-green-600 dark:text-green-400 hover:underline">Learn more <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+          </div>
+          
+          <!-- App Card 3 -->
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition hover:-translate-y-2 hover:shadow-xl">
+            <div class="h-40 bg-gradient-to-r from-purple-500 to-pink-600 relative flex items-center justify-center">
+              <i class="fas fa-palette text-white text-6xl"></i>
+            </div>
+            <div class="p-5">
+              <h4 class="font-bold text-xl mb-2 dark:text-white">Creative AI</h4>
+              <p class="text-gray-600 dark:text-gray-300 text-sm">AI tools generating art, music, and design, enabling new creative possibilities and transforming the entertainment industry.</p>
+              <a href="info.html" class="mt-4 inline-block text-purple-600 dark:text-purple-400 hover:underline">Learn more <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+          </div>
+          
+          <!-- App Card 4 -->
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition hover:-translate-y-2 hover:shadow-xl">
+            <div class="h-40 bg-gradient-to-r from-yellow-500 to-orange-600 relative flex items-center justify-center">
+              <i class="fas fa-car-side text-white text-6xl"></i>
+            </div>
+            <div class="p-5">
+              <h4 class="font-bold text-xl mb-2 dark:text-white">Autonomous Vehicles</h4>
+              <p class="text-gray-600 dark:text-gray-300 text-sm">Self-driving technology that uses AI to perceive surroundings, make decisions, and navigate safely through complex environments.</p>
+              <a href="info.html" class="mt-4 inline-block text-yellow-600 dark:text-yellow-400 hover:underline">Learn more <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Restore Action section -->
+    <section id="action" class="py-16 bg-gray-50 dark:bg-gray-900 section-reveal">
+      <div class="container mx-auto px-4 md:px-8">
+        <div class="lg:flex items-center">
+          <div class="lg:w-1/2 mb-8 lg:mb-0 pr-0 lg:pr-12">
+            <h2 class="text-3xl font-bold mb-6 relative">
+              <i class="fas fa-hands-helping text-green-600 mr-2"></i>
+              Take Action
+              <div class="h-1 w-24 bg-green-600 mt-2"></div>
+            </h2>
+            <p class="text-xl mb-6">Here's how you can contribute to responsible AI use and development.</p>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                <span>Learn how to spot AI-generated content and misinformation.</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                <span>Use AI tools ethically and responsibly in your work and studies.</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                <span>Join communities and take free AI courses to stay informed.</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                <span>Advocate for clear AI regulations and ethical guidelines.</span>
+              </li>
+            </ul>
+            
+            <a href="action.html" class="mt-8 bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-500 transition shadow-lg flex items-center inline-block">
+              <i class="fas fa-hand-paper mr-2"></i> Explore Ways to Help
+            </a>
+          </div>
+          <div class="lg:w-1/2">
+            <img src="https://img.freepik.com/free-vector/team-creating-artificial-intelligence_74855-6575.jpg" alt="People using AI responsibly" class="rounded-lg shadow-xl">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Restore Quiz section -->
+    <section id="quiz" class="py-16 bg-gray-100 dark:bg-gray-900 section-reveal">
+      <div class="container mx-auto px-4 md:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-2 relative inline-block">
+            <i class="fas fa-question-circle text-blue-600 dark:text-blue-400 mr-2"></i>
+            Test Your AI Knowledge
+            <div class="h-1 w-24 bg-blue-600 dark:bg-blue-400 absolute bottom-0 left-1/2 transform -translate-x-1/2 mt-2"></div>
+          </h2>
+          <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mt-4">Take this quick quiz to test your understanding of artificial intelligence.</p>
+          
+          <div class="mt-8">
+            <a href="quiz.html" class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-500 transition shadow-lg inline-flex items-center">
+              <i class="fas fa-question-circle mr-2"></i> Start the Quiz
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Add a typing text effect section -->
+    <div class="py-16 bg-gray-800 text-white section-reveal relative">
+      <div class="container mx-auto px-4 md:px-8 text-center">
+        <h3 class="text-2xl font-bold mb-6">Experience AI in Action</h3>
+        <div class="max-w-2xl mx-auto p-6 bg-gray-900 rounded-lg shadow-lg">
+          <div class="flex items-center mb-4">
+            <div class="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
+            <div class="w-3 h-3 rounded-full bg-yellow-500 mr-2"></div>
+            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            <div class="ml-auto text-sm text-gray-400">AI Demonstration</div>
+          </div>
+          <div class="font-mono text-sm sm:text-base text-green-400">
+            <span class="text-blue-400">user@ai-future:~$</span> <span class="typing-text">Tell me about artificial intelligence...</span>
+            <div class="h-6"></div>
+            <div class="typing-response whitespace-pre-wrap text-left"></div>
+            <div class="typing-cursor">_</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white py-8">
+    <div class="container mx-auto px-4 md:px-8">
+      <div class="md:flex justify-between items-center">
+        <div class="mb-6 md:mb-0">
+          <h3 class="text-xl font-bold mb-2 flex items-center">
+            <i class="fas fa-robot mr-2"></i> AI: Shaping Our Future
+          </h3>
+          <p>An educational project on artificial intelligence.</p>
+        </div>
+        
+      </div>
+      <div class="border-t border-blue-800 mt-6 pt-6 text-sm text-center md:text-left md:flex justify-between">
+        <div>&copy; 2025 AI Awareness. Raiu Evangelista BSIT IV.</div>
+        <div class="mt-2 md:mt-0">
+          <a href="#" class="hover:underline mx-2">Privacy Policy</a>
+          <a href="#" class="hover:underline mx-2">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html> 

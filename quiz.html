@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Quiz - AI: Shaping Our Future</title>
+  <meta name="description" content="Test your knowledge of Artificial Intelligence with our interactive 15-question quiz. Learn about AI concepts, applications, and implications.">
+  <meta name="keywords" content="artificial intelligence quiz, AI test, AI knowledge, AI learning, technology quiz, interactive quiz">
+  <meta name="author" content="PSU WebDev Contest">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ai-future.example.com/quiz.html">
+  <meta property="og:title" content="AI Quiz - AI: Shaping Our Future">
+  <meta property="og:description" content="Test your knowledge of Artificial Intelligence with our interactive 15-question quiz. How much do you know about AI?">
+  <meta property="og:image" content="https://img.freepik.com/free-vector/brain-with-digital-circuit-banner-artificial-intelligence-technology-background_8169-175.jpg">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://ai-future.example.com/quiz.html">
+  <meta property="twitter:title" content="AI Quiz - AI: Shaping Our Future">
+  <meta property="twitter:description" content="Test your knowledge of Artificial Intelligence with our interactive 15-question quiz. How much do you know about AI?">
+  <meta property="twitter:image" content="https://img.freepik.com/free-vector/brain-with-digital-circuit-banner-artificial-intelligence-technology-background_8169-175.jpg">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://img.icons8.com/fluent/48/000000/artificial-intelligence.png">
+  
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <!-- Fixed navigation -->
+  <header class="bg-blue-900 text-white p-4 shadow fixed w-full z-50">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-3xl font-bold flex items-center"><i class="fas fa-robot mr-2"></i>AI: Shaping Our Future</h1>
+      <nav class="hidden md:flex items-center">
+        <a href="index.html" class="mx-3 hover:text-blue-200 transition"><i class="fas fa-home mr-1"></i> Home</a>
+        <a href="info.html" class="mx-3 hover:text-blue-200 transition"><i class="fas fa-info-circle mr-1"></i> Info</a>
+        <a href="action.html" class="mx-3 hover:text-blue-200 transition"><i class="fas fa-hands-helping mr-1"></i> Action</a>
+        <a href="quiz.html" class="mx-3 hover:text-blue-200 transition text-blue-300"><i class="fas fa-question-circle mr-1"></i> Quiz</a>
+      </nav>
+      <button id="mobileMenuBtn" class="md:hidden text-xl p-2 focus:outline-none">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+  
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="bg-blue-800 text-white fixed w-full z-40 hidden shadow-lg">
+    <div class="container mx-auto py-2">
+      <a href="index.html" class="block py-3 px-4 hover:bg-blue-700 border-b border-blue-600"><i class="fas fa-home mr-2"></i> Home</a>
+      <a href="info.html" class="block py-3 px-4 hover:bg-blue-700 border-b border-blue-600"><i class="fas fa-info-circle mr-2"></i> Info</a>
+      <a href="action.html" class="block py-3 px-4 hover:bg-blue-700 border-b border-blue-600"><i class="fas fa-hands-helping mr-2"></i> Action</a>
+      <a href="quiz.html" class="block py-3 px-4 bg-blue-700"><i class="fas fa-question-circle mr-2"></i> Quiz</a>
+    </div>
+  </div>
+
+  <!-- Page header section -->
+  <section class="pt-32 pb-8 bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700 text-white">
+    <div class="container mx-auto px-4 md:px-8">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4 animate-fadeIn">Test Your <span class="text-blue-300">AI Knowledge</span></h2>
+      <p class="text-xl mb-6 max-w-3xl">How much do you know about artificial intelligence? Take this interactive quiz to test your understanding and learn more about this revolutionary technology.</p>
+    </div>
+  </section>
+
+  <main>
+    <!-- Quiz section with enhanced design -->
+    <section class="py-16 bg-gray-100 dark:bg-gray-900">
+      <div class="container mx-auto px-4 md:px-8">
+        <!-- Quiz interface -->
+        <div class="max-w-3xl mx-auto">
+          <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+            <div class="p-8">
+              <div class="flex items-center justify-between mb-8">
+                <h3 class="text-2xl font-bold dark:text-white flex items-center">
+                  <i class="fas fa-question-circle text-blue-600 dark:text-blue-400 mr-3"></i> 
+                  AI Quiz
+                </h3>
+                <div class="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-semibold">
+                  15 questions
+                </div>
+              </div>
+              
+              <div id="quiz-container" class="dark:text-white">
+                <!-- Quiz content will be loaded here by JavaScript -->
+                <div class="quiz-loading flex items-center justify-center py-12">
+                  <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-600"></div>
+                  <span class="ml-3">Loading quiz...</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Quiz information -->
+          <div class="mt-10 grid md:grid-cols-2 gap-6">
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+              <h3 class="font-bold text-lg mb-3 dark:text-white flex items-center">
+                <i class="fas fa-info-circle text-blue-600 dark:text-blue-400 mr-2"></i>
+                About This Quiz
+              </h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">This quiz covers various aspects of artificial intelligence including its history, applications, ethical considerations, and future potential.</p>
+              <p class="text-gray-600 dark:text-gray-300">Test your knowledge and learn something new about this transformative technology!</p>
+            </div>
+            
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+              <h3 class="font-bold text-lg mb-3 dark:text-white flex items-center">
+                <i class="fas fa-trophy text-yellow-500 mr-2"></i>
+                Scoring
+              </h3>
+              <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                  <span>15-12 correct: AI Expert</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                  <span>11-8 correct: AI Enthusiast</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                  <span>7-4 correct: AI Beginner</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                  <span>3-0 correct: Time to learn more!</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Additional learning resources section -->
+    <section class="py-16 bg-white dark:bg-gray-800">
+      <div class="container mx-auto px-4 md:px-8">
+        <h3 class="text-2xl font-bold mb-8 text-center dark:text-white">
+          <i class="fas fa-book-open text-blue-600 dark:text-blue-400 mr-2"></i>
+          Want to Learn More?
+        </h3>
+        
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div class="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-md">
+            <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mb-4">
+              <i class="fas fa-video text-white text-xl"></i>
+            </div>
+            <h4 class="font-bold text-lg mb-2 dark:text-white">Video Courses</h4>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              Free video tutorials explaining AI concepts, from basics to advanced techniques.
+            </p>
+            <a href="https://www.youtube.com/playlist?list=PLO89UEYPDWsLxh5-Gw7PnKRB_m_DP9OpH" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">Google AI Education →</a><br>
+            <a href="https://www.edx.org/learn/artificial-intelligence" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">edX AI Courses →</a>
+          </div>
+          
+          <div class="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-md">
+            <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mb-4">
+              <i class="fas fa-file-pdf text-white text-xl"></i>
+            </div>
+            <h4 class="font-bold text-lg mb-2 dark:text-white">E-books & Articles</h4>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              Downloadable resources for in-depth learning about all aspects of AI.
+            </p>
+            <a href="https://stanford.edu/~shervine/teaching/cs-229/" target="_blank" rel="noopener noreferrer" class="text-green-600 dark:text-green-400 hover:underline">Stanford AI Cheat Sheets →</a><br>
+            <a href="https://arxiv.org/list/cs.AI/recent" target="_blank" rel="noopener noreferrer" class="text-green-600 dark:text-green-400 hover:underline">arXiv AI Research Papers →</a>
+          </div>
+          
+          <div class="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-md">
+            <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mb-4">
+              <i class="fas fa-users text-white text-xl"></i>
+            </div>
+            <h4 class="font-bold text-lg mb-2 dark:text-white">AI Communities</h4>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              Join forums and communities to discuss AI with other enthusiasts and experts.
+            </p>
+            <a href="https://ai.stackexchange.com/" target="_blank" rel="noopener noreferrer" class="text-purple-600 dark:text-purple-400 hover:underline">AI Stack Exchange →</a><br>
+            <a href="https://www.reddit.com/r/artificial/" target="_blank" rel="noopener noreferrer" class="text-purple-600 dark:text-purple-400 hover:underline">Reddit r/artificial →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white py-8">
+    <div class="container mx-auto px-4 md:px-8">
+      <div class="md:flex justify-between items-center">
+        <div class="mb-6 md:mb-0">
+          <h3 class="text-xl font-bold mb-2 flex items-center">
+            <i class="fas fa-robot mr-2"></i> AI: Shaping Our Future
+          </h3>
+          <p>An educational project on artificial intelligence.</p>
+        </div>
+        
+      </div>
+      <div class="border-t border-blue-800 mt-6 pt-6 text-sm text-center md:text-left md:flex justify-between">
+        <div>&copy; 2025 AI Awareness. Raiu Evangelista BSIT IV.</div>
+        <div class="mt-2 md:mt-0">
+          <a href="#" class="hover:underline mx-2">Privacy Policy</a>
+          <a href="#" class="hover:underline mx-2">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html> 
